@@ -5,85 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Trần Bảo Huy</title>
     <style>
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f9f9f9; }
-        header { border-bottom: 2px solid #2c3e50; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { color: #2c3e50; margin-bottom: 5px; }
-        .section { background: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h3 { color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 0; }
-        .item { margin-bottom: 15px; }
-        .date { font-weight: bold; color: #7f8c8d; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 5px; }
-        .philosophy { font-style: italic; color: #555; border-left: 4px solid #2980b9; padding-left: 15px; }
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+            --text: #333;
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background: var(--bg); 
+        }
+
+        /* Hiệu ứng hiện dần khi load trang */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container { animation: fadeIn 0.8s ease-out; }
+
+        header { 
+            text-align: center; 
+            padding-bottom: 40px; 
+            border-bottom: 3px solid var(--primary); 
+            margin-bottom: 40px; 
+        }
+
+        h1 { color: var(--primary); margin: 0; letter-spacing: -1px; font-size: 2.5em; }
+        .subtitle { color: var(--accent); font-weight: 600; margin-top: 10px; }
+
+        .section { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            margin-bottom: 25px; 
+        }
+
+        /* Hiệu ứng nổi lên khi di chuột qua */
+        .section:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        }
+
+        h3 { 
+            color: var(--primary); 
+            border-left: 5px solid var(--accent); 
+            padding-left: 15px; 
+            margin-top: 0; 
+            font-size: 1.3em; 
+        }
+
+        .item { margin-bottom: 20px; }
+        .date { 
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        ul { padding-left: 20px; list-style-type: square; }
+        li { margin-bottom: 8px; }
+
+        .philosophy { 
+            font-style: italic; 
+            color: #555; 
+            background: #eef2f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+
+        strong { color: var(--primary); }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>TRẦN BẢO HUY</h1>
-    <p>Operations & Data Specialist | English: Intermediate</p>
-</header>
+<div class="container">
+    <header>
+        <h1>TRẦN BẢO HUY</h1>
+        <div class="subtitle">Operations & Data Specialist | English: Intermediate</div>
+    </header>
 
-<div class="section">
-    <h3>PROFESSIONAL PHILOSOPHY</h3>
-    <p class="philosophy">
-        I focus on execution and measurable results. I prefer to demonstrate my competence through actual performance rather than verbal introductions.
-    </p>
-</div>
-
-<div class="section">
-    <h3>EXPERIENCE</h3>
-
-    <div class="item">
-        <span class="date">2025 - Present</span>
-        <p><strong>Self-Development & Language Practice</strong></p>
-        <ul>
-            <li>Practicing English communication through hospitality service at a cocktail bar.</li>
-            <li>Self-studying professional skills for the labor market.</li>
-        </ul>
+    <div class="section">
+        <h3>PROFESSIONAL PHILOSOPHY</h3>
+        <p class="philosophy">
+            "I focus on execution and measurable results. I prefer to demonstrate my competence through actual performance rather than verbal introductions."
+        </p>
     </div>
 
-    <div class="item">
-        <span class="date">2022 - 2024</span>
-        <p><strong>Armed Forces (People’s Public Security) | Section Leader</strong></p>
-        <ul>
-            <li>Executed daily data reporting and situational updates.</li>
-            <li>Coordinated personnel assignments for guarding, security, and court support.</li>
-            <li>Result: Awarded "Excellent Performance" for 2 consecutive years.</li>
-        </ul>
+    <div class="section">
+        <h3>EXPERIENCE</h3>
+
+        <div class="item">
+            <span class="date">2025 - Present</span>
+            <p><strong>Self-Development & Language Practice</strong></p>
+            <ul>
+                <li>Practicing English communication through hospitality service at a cocktail bar.</li>
+                <li>Self-studying professional skills for the labor market.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <span class="date">2022 - 2024</span>
+            <p><strong>Armed Forces (People’s Public Security) | Section Leader</strong></p>
+            <ul>
+                <li>Executed daily data reporting and situational updates.</li>
+                <li>Coordinated personnel assignments for guarding, security, and court support.</li>
+                <li><strong>Result:</strong> Awarded "Excellent Performance" for 2 consecutive years.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <span class="date">2020 - 2021</span>
+            <p><strong>YouTube Operations Specialist</strong></p>
+            <ul>
+                <li>Optimized SEO and used internal tools to increase video views.</li>
+                <li>Managed a system of 10,000+ Gmail accounts.</li>
+                <li><strong>Result:</strong> Achieved 1 million views per day; ranked 1st in performance among a team of 10.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <span class="date">2019 - 2020</span>
+            <p><strong>Media & Communications Firm | Fanpage Manager</strong></p>
+            <ul>
+                <li>Managed Facebook Fanpages and collaborated with A-list artists.</li>
+                <li>Managed a Fanpage system with a total of 40 million followers.</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="item">
-        <span class="date">2020 - 2021</span>
-        <p><strong>YouTube Operations Specialist</strong></p>
-        <ul>
-            <li>Optimized SEO and used internal tools to increase video views.</li>
-            <li>Managed a system of 10,000+ Gmail accounts.</li>
-            <li>Result: Achieved 1 million views per day; ranked 1st in performance among a team of 10.</li>
-        </ul>
+    <div class="skills-grid">
+        <div class="section">
+            <h3>TECHNICAL SKILLS</h3>
+            <ul>
+                <li>Daily reporting & Data logs</li>
+                <li>Personnel coordination</li>
+                <li>SEO & Keyword research</li>
+                <li>Content editing tools</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>EDUCATION</h3>
+            <p><strong>2017 - 2021</strong></p>
+            <p>Economics<br>Tay Nguyen University</p>
+        </div>
     </div>
-
-    <div class="item">
-        <span class="date">2019 - 2020</span>
-        <p><strong>Media & Communications Firm | Fanpage Manager</strong></p>
-        <ul>
-            <li>Managed Facebook Fanpages and collaborated with A-list artists.</li>
-            <li>Managed a Fanpage system with a total of 40 million followers.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="section">
-    <h3>EDUCATION</h3>
-    <p><span class="date">2017 - 2021:</span> Economics - Tay Nguyen University.</p>
-</div>
-
-<div class="section">
-    <h3>TECHNICAL SKILLS</h3>
-    <ul>
-        <li><strong>Operations:</strong> Daily reporting, personnel coordination, task scheduling.</li>
-        <li><strong>Digital Tools:</strong> Keyword research, SEO tools, marketing tools, content editing.</li>
-    </ul>
 </div>
 
 </body>
